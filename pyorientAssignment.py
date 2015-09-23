@@ -1,9 +1,9 @@
-
 import pyorient
 import sys
+import numpy as np
 
-client = pyorient.OrientDB("localhost", 2424)
-session_id = client.connect("root", "admin")
+client = pyorient.OrientDB("localhost", 2480)
+session_id = client.connect("root", "root")
 db_name = "soufun"
 db_username = "admin"
 db_password = "admin"
@@ -42,8 +42,8 @@ for record in records:
 
 # [PRINT OUT THE RESULTING VALUES BY CONCATENATING THEM TO THESE LINES TO CHECK YOUR WORK]
 
-print 'min price: '
-print 'max price: ' 
-print 'average price: '
+print 'min price:', min(records)
+print 'max price: ', max(records)
+print 'average price:', np.mean(records)
 
 client.db_close()
